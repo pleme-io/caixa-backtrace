@@ -1,0 +1,1042 @@
+{
+  "version": 2,
+  "workspace": {
+    "root": "/Users/drzzln/code/github/pleme-io/caixa-backtrace",
+    "members": [
+      {
+        "name": "cpp_smoke_test",
+        "relative_path": "crates/cpp_smoke_test"
+      },
+      {
+        "name": "backtrace",
+        "relative_path": "."
+      },
+      {
+        "name": "dylib-dep",
+        "relative_path": "crates/dylib-dep"
+      },
+      {
+        "name": "as-if-std",
+        "relative_path": "crates/as-if-std"
+      }
+    ]
+  },
+  "crates": {
+    "addr2line-0.25.1": {
+      "name": "addr2line",
+      "version": "0.25.1",
+      "edition": "2018",
+      "source": {
+        "kind": "registry",
+        "url": "https://crates.io/api/v1/crates/addr2line/0.25.1/download",
+        "sha256": "1b5d307320b3181d6d7954e663bd7c774a838b8220fe0593c86d9fb09f498b4b",
+        "name_with_ext": "addr2line-0.25.1.tar.gz"
+      },
+      "features": [],
+      "proc_macro": false,
+      "build_script": null,
+      "binaries": [
+        {
+          "name": "addr2line",
+          "path": "src/bin/addr2line.rs"
+        }
+      ],
+      "lib_target": {
+        "name": "addr2line",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [
+        {
+          "name": "gimli",
+          "package_key": "gimli-0.32.3",
+          "kind": "normal",
+          "features": [
+            "read"
+          ],
+          "uses_default_features": false,
+          "optional": false,
+          "target": null
+        }
+      ],
+      "runtime_dependencies": [
+        {
+          "name": "gimli",
+          "package_key": "gimli-0.32.3",
+          "kind": "normal",
+          "features": [
+            "read"
+          ],
+          "uses_default_features": false,
+          "optional": false,
+          "target": null
+        }
+      ],
+      "build_dependencies": [],
+      "crate_renames": {}
+    },
+    "adler2-2.0.1": {
+      "name": "adler2",
+      "version": "2.0.1",
+      "edition": "2021",
+      "source": {
+        "kind": "registry",
+        "url": "https://crates.io/api/v1/crates/adler2/2.0.1/download",
+        "sha256": "320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa",
+        "name_with_ext": "adler2-2.0.1.tar.gz"
+      },
+      "features": [],
+      "proc_macro": false,
+      "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "adler2",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [],
+      "runtime_dependencies": [],
+      "build_dependencies": [],
+      "crate_renames": {}
+    },
+    "as-if-std-0.1.0": {
+      "name": "as-if-std",
+      "version": "0.1.0",
+      "edition": "2024",
+      "source": {
+        "kind": "path",
+        "relative_path": "crates/as-if-std"
+      },
+      "features": [
+        "addr2line",
+        "backtrace",
+        "default",
+        "miniz_oxide",
+        "object",
+        "ruzstd"
+      ],
+      "proc_macro": false,
+      "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "as_if_std",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [
+        {
+          "name": "addr2line",
+          "package_key": "addr2line-0.25.1",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": true,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        },
+        {
+          "name": "cfg_if",
+          "package_key": "cfg-if-1.0.4",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        },
+        {
+          "name": "libc",
+          "package_key": "libc-0.2.186",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": false,
+          "target": null
+        },
+        {
+          "name": "miniz_oxide",
+          "package_key": "miniz_oxide-0.8.9",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": true,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        },
+        {
+          "name": "object",
+          "package_key": "object-0.37.3",
+          "kind": "normal",
+          "features": [
+            "read_core",
+            "elf",
+            "macho",
+            "pe",
+            "xcoff",
+            "unaligned",
+            "archive"
+          ],
+          "uses_default_features": false,
+          "optional": true,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        },
+        {
+          "name": "rustc_demangle",
+          "package_key": "rustc-demangle-0.1.27",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        },
+        {
+          "name": "ruzstd",
+          "package_key": "ruzstd-0.8.3",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": true,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        }
+      ],
+      "runtime_dependencies": [
+        {
+          "name": "addr2line",
+          "package_key": "addr2line-0.25.1",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": true,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        },
+        {
+          "name": "cfg_if",
+          "package_key": "cfg-if-1.0.4",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        },
+        {
+          "name": "libc",
+          "package_key": "libc-0.2.186",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": false,
+          "target": null
+        },
+        {
+          "name": "miniz_oxide",
+          "package_key": "miniz_oxide-0.8.9",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": true,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        },
+        {
+          "name": "object",
+          "package_key": "object-0.37.3",
+          "kind": "normal",
+          "features": [
+            "read_core",
+            "elf",
+            "macho",
+            "pe",
+            "xcoff",
+            "unaligned",
+            "archive"
+          ],
+          "uses_default_features": false,
+          "optional": true,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        },
+        {
+          "name": "rustc_demangle",
+          "package_key": "rustc-demangle-0.1.27",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        },
+        {
+          "name": "ruzstd",
+          "package_key": "ruzstd-0.8.3",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": true,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        }
+      ],
+      "build_dependencies": [],
+      "crate_renames": {
+        "cfg-if": [
+          {
+            "version": "1.0.4",
+            "rename": "cfg_if"
+          }
+        ],
+        "rustc-demangle": [
+          {
+            "version": "0.1.27",
+            "rename": "rustc_demangle"
+          }
+        ]
+      }
+    },
+    "backtrace-0.3.77": {
+      "name": "backtrace",
+      "version": "0.3.77",
+      "edition": "2024",
+      "source": {
+        "kind": "path",
+        "relative_path": "."
+      },
+      "features": [
+        "cpp_demangle",
+        "default",
+        "std"
+      ],
+      "proc_macro": false,
+      "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "backtrace",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [
+        {
+          "name": "addr2line",
+          "package_key": "addr2line-0.25.1",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": false,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        },
+        {
+          "name": "cfg_if",
+          "package_key": "cfg-if-1.0.4",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        },
+        {
+          "name": "cpp_demangle",
+          "package_key": "cpp_demangle-0.5.1",
+          "kind": "normal",
+          "features": [
+            "alloc"
+          ],
+          "uses_default_features": false,
+          "optional": true,
+          "target": null
+        },
+        {
+          "name": "libc",
+          "package_key": "libc-0.2.186",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": false,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        },
+        {
+          "name": "miniz_oxide",
+          "package_key": "miniz_oxide-0.8.9",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": false,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        },
+        {
+          "name": "object",
+          "package_key": "object-0.37.3",
+          "kind": "normal",
+          "features": [
+            "read_core",
+            "elf",
+            "macho",
+            "pe",
+            "xcoff",
+            "unaligned",
+            "archive"
+          ],
+          "uses_default_features": false,
+          "optional": false,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        },
+        {
+          "name": "rustc_demangle",
+          "package_key": "rustc-demangle-0.1.27",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        }
+      ],
+      "runtime_dependencies": [
+        {
+          "name": "addr2line",
+          "package_key": "addr2line-0.25.1",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": false,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        },
+        {
+          "name": "cfg_if",
+          "package_key": "cfg-if-1.0.4",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        },
+        {
+          "name": "cpp_demangle",
+          "package_key": "cpp_demangle-0.5.1",
+          "kind": "normal",
+          "features": [
+            "alloc"
+          ],
+          "uses_default_features": false,
+          "optional": true,
+          "target": null
+        },
+        {
+          "name": "libc",
+          "package_key": "libc-0.2.186",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": false,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        },
+        {
+          "name": "miniz_oxide",
+          "package_key": "miniz_oxide-0.8.9",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": false,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        },
+        {
+          "name": "object",
+          "package_key": "object-0.37.3",
+          "kind": "normal",
+          "features": [
+            "read_core",
+            "elf",
+            "macho",
+            "pe",
+            "xcoff",
+            "unaligned",
+            "archive"
+          ],
+          "uses_default_features": false,
+          "optional": false,
+          "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))"
+        },
+        {
+          "name": "rustc_demangle",
+          "package_key": "rustc-demangle-0.1.27",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        }
+      ],
+      "build_dependencies": [],
+      "crate_renames": {
+        "cfg-if": [
+          {
+            "version": "1.0.4",
+            "rename": "cfg_if"
+          }
+        ],
+        "rustc-demangle": [
+          {
+            "version": "0.1.27",
+            "rename": "rustc_demangle"
+          }
+        ]
+      }
+    },
+    "cc-1.2.62": {
+      "name": "cc",
+      "version": "1.2.62",
+      "edition": "2018",
+      "source": {
+        "kind": "registry",
+        "url": "https://crates.io/api/v1/crates/cc/1.2.62/download",
+        "sha256": "a1dce859f0832a7d088c4f1119888ab94ef4b5d6795d1ce05afb7fe159d79f98",
+        "name_with_ext": "cc-1.2.62.tar.gz"
+      },
+      "features": [],
+      "proc_macro": false,
+      "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "cc",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [
+        {
+          "name": "find_msvc_tools",
+          "package_key": "find-msvc-tools-0.1.9",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        },
+        {
+          "name": "shlex",
+          "package_key": "shlex-1.3.0",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        }
+      ],
+      "runtime_dependencies": [
+        {
+          "name": "find_msvc_tools",
+          "package_key": "find-msvc-tools-0.1.9",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        },
+        {
+          "name": "shlex",
+          "package_key": "shlex-1.3.0",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        }
+      ],
+      "build_dependencies": [],
+      "crate_renames": {
+        "find-msvc-tools": [
+          {
+            "version": "0.1.9",
+            "rename": "find_msvc_tools"
+          }
+        ]
+      }
+    },
+    "cfg-if-1.0.4": {
+      "name": "cfg-if",
+      "version": "1.0.4",
+      "edition": "2018",
+      "source": {
+        "kind": "registry",
+        "url": "https://crates.io/api/v1/crates/cfg-if/1.0.4/download",
+        "sha256": "9330f8b2ff13f34540b44e946ef35111825727b38d33286ef986142615121801",
+        "name_with_ext": "cfg-if-1.0.4.tar.gz"
+      },
+      "features": [],
+      "proc_macro": false,
+      "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "cfg_if",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [],
+      "runtime_dependencies": [],
+      "build_dependencies": [],
+      "crate_renames": {}
+    },
+    "cpp_demangle-0.5.1": {
+      "name": "cpp_demangle",
+      "version": "0.5.1",
+      "edition": "2018",
+      "source": {
+        "kind": "registry",
+        "url": "https://crates.io/api/v1/crates/cpp_demangle/0.5.1/download",
+        "sha256": "0667304c32ea56cb4cd6d2d7c0cfe9a2f8041229db8c033af7f8d69492429def",
+        "name_with_ext": "cpp_demangle-0.5.1.tar.gz"
+      },
+      "features": [
+        "alloc"
+      ],
+      "proc_macro": false,
+      "build_script": "build.rs",
+      "binaries": [
+        {
+          "name": "afl_runner",
+          "path": "src/bin/afl_runner.rs"
+        }
+      ],
+      "lib_target": {
+        "name": "cpp_demangle",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [
+        {
+          "name": "cfg_if",
+          "package_key": "cfg-if-1.0.4",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        }
+      ],
+      "runtime_dependencies": [
+        {
+          "name": "cfg_if",
+          "package_key": "cfg-if-1.0.4",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        }
+      ],
+      "build_dependencies": [],
+      "crate_renames": {
+        "cfg-if": [
+          {
+            "version": "1.0.4",
+            "rename": "cfg_if"
+          }
+        ]
+      }
+    },
+    "cpp_smoke_test-0.1.0": {
+      "name": "cpp_smoke_test",
+      "version": "0.1.0",
+      "edition": "2024",
+      "source": {
+        "kind": "path",
+        "relative_path": "crates/cpp_smoke_test"
+      },
+      "features": [],
+      "proc_macro": false,
+      "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "cpp_smoke_test",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [
+        {
+          "name": "backtrace",
+          "package_key": "backtrace-0.3.77",
+          "kind": "normal",
+          "features": [
+            "cpp_demangle"
+          ],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        },
+        {
+          "name": "cc",
+          "package_key": "cc-1.2.62",
+          "kind": "build",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        }
+      ],
+      "runtime_dependencies": [
+        {
+          "name": "backtrace",
+          "package_key": "backtrace-0.3.77",
+          "kind": "normal",
+          "features": [
+            "cpp_demangle"
+          ],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        }
+      ],
+      "build_dependencies": [
+        {
+          "name": "cc",
+          "package_key": "cc-1.2.62",
+          "kind": "build",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": null
+        }
+      ],
+      "crate_renames": {}
+    },
+    "dylib-dep-0.1.0": {
+      "name": "dylib-dep",
+      "version": "0.1.0",
+      "edition": "2024",
+      "source": {
+        "kind": "path",
+        "relative_path": "crates/dylib-dep"
+      },
+      "features": [],
+      "proc_macro": false,
+      "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "dylib_dep",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [],
+      "runtime_dependencies": [],
+      "build_dependencies": [],
+      "crate_renames": {}
+    },
+    "find-msvc-tools-0.1.9": {
+      "name": "find-msvc-tools",
+      "version": "0.1.9",
+      "edition": "2018",
+      "source": {
+        "kind": "registry",
+        "url": "https://crates.io/api/v1/crates/find-msvc-tools/0.1.9/download",
+        "sha256": "5baebc0774151f905a1a2cc41989300b1e6fbb29aff0ceffa1064fdd3088d582",
+        "name_with_ext": "find-msvc-tools-0.1.9.tar.gz"
+      },
+      "features": [],
+      "proc_macro": false,
+      "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "find_msvc_tools",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [],
+      "runtime_dependencies": [],
+      "build_dependencies": [],
+      "crate_renames": {}
+    },
+    "gimli-0.32.3": {
+      "name": "gimli",
+      "version": "0.32.3",
+      "edition": "2018",
+      "source": {
+        "kind": "registry",
+        "url": "https://crates.io/api/v1/crates/gimli/0.32.3/download",
+        "sha256": "e629b9b98ef3dd8afe6ca2bd0f89306cec16d43d907889945bc5d6687f2f13c7",
+        "name_with_ext": "gimli-0.32.3.tar.gz"
+      },
+      "features": [
+        "read",
+        "read-core"
+      ],
+      "proc_macro": false,
+      "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "gimli",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [],
+      "runtime_dependencies": [],
+      "build_dependencies": [],
+      "crate_renames": {}
+    },
+    "libc-0.2.186": {
+      "name": "libc",
+      "version": "0.2.186",
+      "edition": "2021",
+      "source": {
+        "kind": "registry",
+        "url": "https://crates.io/api/v1/crates/libc/0.2.186/download",
+        "sha256": "68ab91017fe16c622486840e4c83c9a37afeff978bd239b5293d61ece587de66",
+        "name_with_ext": "libc-0.2.186.tar.gz"
+      },
+      "features": [],
+      "proc_macro": false,
+      "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "libc",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [],
+      "runtime_dependencies": [],
+      "build_dependencies": [],
+      "crate_renames": {}
+    },
+    "libloading-0.8.9": {
+      "name": "libloading",
+      "version": "0.8.9",
+      "edition": "2015",
+      "source": {
+        "kind": "registry",
+        "url": "https://crates.io/api/v1/crates/libloading/0.8.9/download",
+        "sha256": "d7c4b02199fee7c5d21a5ae7d8cfa79a6ef5bb2fc834d6e9058e89c825efdc55",
+        "name_with_ext": "libloading-0.8.9.tar.gz"
+      },
+      "features": [],
+      "proc_macro": false,
+      "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "libloading",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [
+        {
+          "name": "cfg_if",
+          "package_key": "cfg-if-1.0.4",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": "cfg(unix)"
+        }
+      ],
+      "runtime_dependencies": [
+        {
+          "name": "cfg_if",
+          "package_key": "cfg-if-1.0.4",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": true,
+          "optional": false,
+          "target": "cfg(unix)"
+        }
+      ],
+      "build_dependencies": [],
+      "crate_renames": {
+        "cfg-if": [
+          {
+            "version": "1.0.4",
+            "rename": "cfg_if"
+          }
+        ]
+      }
+    },
+    "memchr-2.8.0": {
+      "name": "memchr",
+      "version": "2.8.0",
+      "edition": "2021",
+      "source": {
+        "kind": "registry",
+        "url": "https://crates.io/api/v1/crates/memchr/2.8.0/download",
+        "sha256": "f8ca58f447f06ed17d5fc4043ce1b10dd205e060fb3ce5b979b8ed8e59ff3f79",
+        "name_with_ext": "memchr-2.8.0.tar.gz"
+      },
+      "features": [],
+      "proc_macro": false,
+      "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "memchr",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [],
+      "runtime_dependencies": [],
+      "build_dependencies": [],
+      "crate_renames": {}
+    },
+    "miniz_oxide-0.8.9": {
+      "name": "miniz_oxide",
+      "version": "0.8.9",
+      "edition": "2021",
+      "source": {
+        "kind": "registry",
+        "url": "https://crates.io/api/v1/crates/miniz_oxide/0.8.9/download",
+        "sha256": "1fa76a2c86f704bdb222d66965fb3d63269ce38518b83cb0575fca855ebb6316",
+        "name_with_ext": "miniz_oxide-0.8.9.tar.gz"
+      },
+      "features": [],
+      "proc_macro": false,
+      "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "miniz_oxide",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [
+        {
+          "name": "adler2",
+          "package_key": "adler2-2.0.1",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": false,
+          "target": null
+        }
+      ],
+      "runtime_dependencies": [
+        {
+          "name": "adler2",
+          "package_key": "adler2-2.0.1",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": false,
+          "target": null
+        }
+      ],
+      "build_dependencies": [],
+      "crate_renames": {}
+    },
+    "object-0.37.3": {
+      "name": "object",
+      "version": "0.37.3",
+      "edition": "2018",
+      "source": {
+        "kind": "registry",
+        "url": "https://crates.io/api/v1/crates/object/0.37.3/download",
+        "sha256": "ff76201f031d8863c38aa7f905eca4f53abbfa15f609db4277d44cd8938f33fe",
+        "name_with_ext": "object-0.37.3.tar.gz"
+      },
+      "features": [
+        "archive",
+        "coff",
+        "elf",
+        "macho",
+        "pe",
+        "read_core",
+        "unaligned",
+        "xcoff"
+      ],
+      "proc_macro": false,
+      "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "object",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [
+        {
+          "name": "memchr",
+          "package_key": "memchr-2.8.0",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": false,
+          "target": null
+        }
+      ],
+      "runtime_dependencies": [
+        {
+          "name": "memchr",
+          "package_key": "memchr-2.8.0",
+          "kind": "normal",
+          "features": [],
+          "uses_default_features": false,
+          "optional": false,
+          "target": null
+        }
+      ],
+      "build_dependencies": [],
+      "crate_renames": {}
+    },
+    "rustc-demangle-0.1.27": {
+      "name": "rustc-demangle",
+      "version": "0.1.27",
+      "edition": "2015",
+      "source": {
+        "kind": "registry",
+        "url": "https://crates.io/api/v1/crates/rustc-demangle/0.1.27/download",
+        "sha256": "b50b8869d9fc858ce7266cce0194bd74df58b9d0e3f6df3a9fc8eb470d95c09d",
+        "name_with_ext": "rustc-demangle-0.1.27.tar.gz"
+      },
+      "features": [],
+      "proc_macro": false,
+      "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "rustc_demangle",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [],
+      "runtime_dependencies": [],
+      "build_dependencies": [],
+      "crate_renames": {}
+    },
+    "ruzstd-0.8.3": {
+      "name": "ruzstd",
+      "version": "0.8.3",
+      "edition": "2018",
+      "source": {
+        "kind": "registry",
+        "url": "https://crates.io/api/v1/crates/ruzstd/0.8.3/download",
+        "sha256": "a7c1c839d570d835527c9a5e4db7cb2198683a988cb9d7293fc8674e6bd58fc8",
+        "name_with_ext": "ruzstd-0.8.3.tar.gz"
+      },
+      "features": [],
+      "proc_macro": false,
+      "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "ruzstd",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [],
+      "runtime_dependencies": [],
+      "build_dependencies": [],
+      "crate_renames": {}
+    },
+    "shlex-1.3.0": {
+      "name": "shlex",
+      "version": "1.3.0",
+      "edition": "2015",
+      "source": {
+        "kind": "registry",
+        "url": "https://crates.io/api/v1/crates/shlex/1.3.0/download",
+        "sha256": "0fda2ff0d084019ba4d7c6f371c95d8fd75ce3524c3cb8fb653a3023f6323e64",
+        "name_with_ext": "shlex-1.3.0.tar.gz"
+      },
+      "features": [
+        "default",
+        "std"
+      ],
+      "proc_macro": false,
+      "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "shlex",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [],
+      "runtime_dependencies": [],
+      "build_dependencies": [],
+      "crate_renames": {}
+    }
+  },
+  "root_crate": "backtrace-0.3.77",
+  "workspace_members": [
+    "cpp_smoke_test-0.1.0",
+    "backtrace-0.3.77",
+    "dylib-dep-0.1.0",
+    "as-if-std-0.1.0"
+  ],
+  "flake_metadata": {
+    "cpp_smoke_test": {
+      "default_bin": null,
+      "repo": null
+    },
+    "backtrace": {
+      "default_bin": null,
+      "repo": "rust-lang/backtrace-rs"
+    },
+    "dylib-dep": {
+      "default_bin": null,
+      "repo": null
+    },
+    "as-if-std": {
+      "default_bin": null,
+      "repo": null
+    }
+  }
+}
