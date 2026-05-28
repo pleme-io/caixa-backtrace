@@ -19,7 +19,7 @@ checksum = "320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa"
 
 [[package]]
 name = "as-if-std"
-version = "0.1.1"
+version = "0.1.0"
 dependencies = [
  "addr2line",
  "cfg-if",
@@ -76,7 +76,7 @@ dependencies = [
 
 [[package]]
 name = "cpp_smoke_test"
-version = "0.1.1"
+version = "0.1.0"
 dependencies = [
  "backtrace",
  "cc",
@@ -84,7 +84,7 @@ dependencies = [
 
 [[package]]
 name = "dylib-dep"
-version = "0.1.1"
+version = "0.1.0"
 
 [[package]]
 name = "find-msvc-tools"
@@ -116,9 +116,9 @@ dependencies = [
 
 [[package]]
 name = "memchr"
-version = "2.8.0"
+version = "2.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f8ca58f447f06ed17d5fc4043ce1b10dd205e060fb3ce5b979b8ed8e59ff3f79"
+checksum = "6b947ae49db0d222b1dbc6b113ce7248a3fc3a6ca21b696717bfc000ba4484d8"
 
 [[package]]
 name = "miniz_oxide"
