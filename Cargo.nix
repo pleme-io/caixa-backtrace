@@ -226,7 +226,7 @@ rec {
       };
       "backtrace" = rec {
         crateName = "backtrace";
-        version = "0.3.78";
+        version = "0.3.79";
         edition = "2024";
         src = lib.cleanSourceWith { filter = sourceFilter;  src = ./.; };
         authors = [
