@@ -1,0 +1,507 @@
+{
+  "schema_version": 1,
+  "cargo_lock_sha256": "4df14e19bbe58113f6f8442f63f5e95a45cc49a5701f38384a7b35866d7857ad",
+  "target_resolves": {
+    "base": {
+      "addr2line-0.25.1": {
+        "runtime_dependencies": [
+          {
+            "name": "gimli",
+            "package_key": "gimli-0.32.3",
+            "kind": "normal",
+            "features": [
+              "read"
+            ],
+            "uses_default_features": false,
+            "optional": false,
+            "target": null,
+            "tree": "target"
+          }
+        ],
+        "build_dependencies": [],
+        "features": []
+      },
+      "adler2-2.0.1": {
+        "runtime_dependencies": [],
+        "build_dependencies": [],
+        "features": []
+      },
+      "as-if-std-0.1.0": {
+        "runtime_dependencies": [
+          {
+            "name": "addr2line",
+            "package_key": "addr2line-0.25.1",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": false,
+            "optional": true,
+            "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))",
+            "tree": "target"
+          },
+          {
+            "name": "cfg_if",
+            "package_key": "cfg-if-1.0.4",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": true,
+            "optional": false,
+            "target": null,
+            "tree": "target"
+          },
+          {
+            "name": "libc",
+            "package_key": "libc-0.2.186",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": false,
+            "optional": false,
+            "target": null,
+            "tree": "target"
+          },
+          {
+            "name": "miniz_oxide",
+            "package_key": "miniz_oxide-0.8.9",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": false,
+            "optional": true,
+            "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))",
+            "tree": "target"
+          },
+          {
+            "name": "object",
+            "package_key": "object-0.37.3",
+            "kind": "normal",
+            "features": [
+              "read_core",
+              "elf",
+              "macho",
+              "pe",
+              "xcoff",
+              "unaligned",
+              "archive"
+            ],
+            "uses_default_features": false,
+            "optional": true,
+            "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))",
+            "tree": "target"
+          },
+          {
+            "name": "rustc_demangle",
+            "package_key": "rustc-demangle-0.1.27",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": true,
+            "optional": false,
+            "target": null,
+            "tree": "target"
+          },
+          {
+            "name": "ruzstd",
+            "package_key": "ruzstd-0.8.3",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": false,
+            "optional": true,
+            "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))",
+            "tree": "target"
+          }
+        ],
+        "build_dependencies": [],
+        "features": [
+          "addr2line",
+          "backtrace",
+          "default",
+          "miniz_oxide",
+          "object",
+          "ruzstd"
+        ]
+      },
+      "backtrace-0.3.78": {
+        "runtime_dependencies": [
+          {
+            "name": "addr2line",
+            "package_key": "addr2line-0.25.1",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": false,
+            "optional": false,
+            "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))",
+            "tree": "target"
+          },
+          {
+            "name": "cfg_if",
+            "package_key": "cfg-if-1.0.4",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": true,
+            "optional": false,
+            "target": null,
+            "tree": "target"
+          },
+          {
+            "name": "cpp_demangle",
+            "package_key": "cpp_demangle-0.5.1",
+            "kind": "normal",
+            "features": [
+              "alloc"
+            ],
+            "uses_default_features": false,
+            "optional": true,
+            "target": null,
+            "tree": "target"
+          },
+          {
+            "name": "libc",
+            "package_key": "libc-0.2.186",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": false,
+            "optional": false,
+            "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))",
+            "tree": "target"
+          },
+          {
+            "name": "miniz_oxide",
+            "package_key": "miniz_oxide-0.8.9",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": false,
+            "optional": false,
+            "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))",
+            "tree": "target"
+          },
+          {
+            "name": "object",
+            "package_key": "object-0.37.3",
+            "kind": "normal",
+            "features": [
+              "read_core",
+              "elf",
+              "macho",
+              "pe",
+              "xcoff",
+              "unaligned",
+              "archive"
+            ],
+            "uses_default_features": false,
+            "optional": false,
+            "target": "cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))",
+            "tree": "target"
+          },
+          {
+            "name": "rustc_demangle",
+            "package_key": "rustc-demangle-0.1.27",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": true,
+            "optional": false,
+            "target": null,
+            "tree": "target"
+          }
+        ],
+        "build_dependencies": [],
+        "features": [
+          "cpp_demangle",
+          "default",
+          "std"
+        ]
+      },
+      "cc-1.2.62": {
+        "runtime_dependencies": [
+          {
+            "name": "find_msvc_tools",
+            "package_key": "find-msvc-tools-0.1.9",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": true,
+            "optional": false,
+            "target": null,
+            "tree": "target"
+          },
+          {
+            "name": "shlex",
+            "package_key": "shlex-1.3.0",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": true,
+            "optional": false,
+            "target": null,
+            "tree": "target"
+          }
+        ],
+        "build_dependencies": [],
+        "features": []
+      },
+      "cfg-if-1.0.4": {
+        "runtime_dependencies": [],
+        "build_dependencies": [],
+        "features": []
+      },
+      "cpp_demangle-0.5.1": {
+        "runtime_dependencies": [
+          {
+            "name": "cfg_if",
+            "package_key": "cfg-if-1.0.4",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": true,
+            "optional": false,
+            "target": null,
+            "tree": "target"
+          }
+        ],
+        "build_dependencies": [],
+        "features": [
+          "alloc"
+        ]
+      },
+      "cpp_smoke_test-0.1.0": {
+        "runtime_dependencies": [
+          {
+            "name": "backtrace",
+            "package_key": "backtrace-0.3.78",
+            "kind": "normal",
+            "features": [
+              "cpp_demangle"
+            ],
+            "uses_default_features": true,
+            "optional": false,
+            "target": null,
+            "tree": "target"
+          }
+        ],
+        "build_dependencies": [
+          {
+            "name": "cc",
+            "package_key": "cc-1.2.62",
+            "kind": "build",
+            "features": [],
+            "uses_default_features": true,
+            "optional": false,
+            "target": null,
+            "tree": "host"
+          }
+        ],
+        "features": []
+      },
+      "dylib-dep-0.1.0": {
+        "runtime_dependencies": [],
+        "build_dependencies": [],
+        "features": []
+      },
+      "find-msvc-tools-0.1.9": {
+        "runtime_dependencies": [],
+        "build_dependencies": [],
+        "features": []
+      },
+      "gimli-0.32.3": {
+        "runtime_dependencies": [],
+        "build_dependencies": [],
+        "features": [
+          "read",
+          "read-core"
+        ]
+      },
+      "libc-0.2.186": {
+        "runtime_dependencies": [],
+        "build_dependencies": [],
+        "features": []
+      },
+      "libloading-0.8.9": {
+        "runtime_dependencies": [
+          {
+            "name": "cfg_if",
+            "package_key": "cfg-if-1.0.4",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": true,
+            "optional": false,
+            "target": "cfg(unix)",
+            "tree": "target"
+          }
+        ],
+        "build_dependencies": [],
+        "features": []
+      },
+      "memchr-2.8.1": {
+        "runtime_dependencies": [],
+        "build_dependencies": [],
+        "features": []
+      },
+      "miniz_oxide-0.8.9": {
+        "runtime_dependencies": [
+          {
+            "name": "adler2",
+            "package_key": "adler2-2.0.1",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": false,
+            "optional": false,
+            "target": null,
+            "tree": "target"
+          }
+        ],
+        "build_dependencies": [],
+        "features": []
+      },
+      "object-0.37.3": {
+        "runtime_dependencies": [
+          {
+            "name": "memchr",
+            "package_key": "memchr-2.8.1",
+            "kind": "normal",
+            "features": [],
+            "uses_default_features": false,
+            "optional": false,
+            "target": null,
+            "tree": "target"
+          }
+        ],
+        "build_dependencies": [],
+        "features": [
+          "archive",
+          "coff",
+          "elf",
+          "macho",
+          "pe",
+          "read_core",
+          "unaligned",
+          "xcoff"
+        ]
+      },
+      "rustc-demangle-0.1.27": {
+        "runtime_dependencies": [],
+        "build_dependencies": [],
+        "features": []
+      },
+      "ruzstd-0.8.3": {
+        "runtime_dependencies": [],
+        "build_dependencies": [],
+        "features": []
+      },
+      "shlex-1.3.0": {
+        "runtime_dependencies": [],
+        "build_dependencies": [],
+        "features": [
+          "default",
+          "std"
+        ]
+      }
+    },
+    "targets": {
+      "aarch64-apple-darwin": {
+        "overrides": {}
+      },
+      "x86_64-apple-darwin": {
+        "overrides": {}
+      },
+      "x86_64-unknown-linux-gnu": {
+        "overrides": {}
+      },
+      "x86_64-unknown-linux-musl": {
+        "overrides": {}
+      },
+      "aarch64-unknown-linux-gnu": {
+        "overrides": {}
+      },
+      "aarch64-unknown-linux-musl": {
+        "overrides": {}
+      }
+    }
+  },
+  "per_crate": {
+    "addr2line-0.25.1": {
+      "edition": "2018",
+      "binaries": [
+        {
+          "name": "addr2line",
+          "path": "src/bin/addr2line.rs"
+        }
+      ]
+    },
+    "adler2-2.0.1": {
+      "edition": "2021"
+    },
+    "as-if-std-0.1.0": {
+      "edition": "2024",
+      "build_script": "build.rs",
+      "lib_target": {
+        "name": "as_if_std",
+        "path": "src/lib.rs"
+      }
+    },
+    "backtrace-0.3.78": {
+      "edition": "2024",
+      "lib_target": {
+        "name": "backtrace",
+        "path": "src/lib.rs"
+      }
+    },
+    "cc-1.2.62": {
+      "edition": "2018"
+    },
+    "cfg-if-1.0.4": {
+      "edition": "2018"
+    },
+    "cpp_demangle-0.5.1": {
+      "edition": "2018",
+      "build_script": "build.rs",
+      "binaries": [
+        {
+          "name": "afl_runner",
+          "path": "src/bin/afl_runner.rs"
+        }
+      ]
+    },
+    "cpp_smoke_test-0.1.0": {
+      "edition": "2024",
+      "build_script": "build.rs",
+      "lib_target": {
+        "name": "cpp_smoke_test",
+        "path": "src/lib.rs"
+      }
+    },
+    "dylib-dep-0.1.0": {
+      "edition": "2024",
+      "lib_target": {
+        "name": "dylib_dep",
+        "path": "src/lib.rs"
+      }
+    },
+    "find-msvc-tools-0.1.9": {
+      "edition": "2018"
+    },
+    "gimli-0.32.3": {
+      "edition": "2018"
+    },
+    "libc-0.2.186": {
+      "edition": "2021",
+      "build_script": "build.rs"
+    },
+    "libloading-0.8.9": {
+      "edition": "2015"
+    },
+    "memchr-2.8.1": {
+      "edition": "2021"
+    },
+    "miniz_oxide-0.8.9": {
+      "edition": "2021"
+    },
+    "object-0.37.3": {
+      "edition": "2018",
+      "build_script": "build.rs"
+    },
+    "rustc-demangle-0.1.27": {
+      "edition": "2015"
+    },
+    "ruzstd-0.8.3": {
+      "edition": "2018"
+    },
+    "shlex-1.3.0": {
+      "edition": "2015"
+    }
+  },
+  "git_nar_sha256": {},
+  "flake_metadata": {}
+}
